@@ -1,0 +1,134 @@
+.main-flex-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 200px;
+    padding: 20px;
+    margin: 20px;
+}
+
+#map {
+    width: 800px;
+    height: 600px;
+    min-width: 400px;
+    min-height: 300px;
+    background: #ffffff;
+    margin: 10px 0;
+}
+
+.time-range-selector {
+    min-width: 180px;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    margin: 10px 10px;
+}
+
+.time-control {
+    padding: 16px 20px;
+    border: 3px solid black;
+
+}
+
+.hurricaneControls {
+    padding: 16px 20px;
+    margin: 10px 0;
+    border: 3px solid black;
+}
+
+.hurricaneCharacteristics {
+    margin: 15px 0;
+    display: block;
+    line-height: 1.5;
+}
+
+#About {
+   position: relative;
+   top: -90px;
+   text-decoration: underline;
+   font-size: 22px;
+}
+
+#aboutDescription {
+    top: -105px;
+    position: relative;
+}
+
+#Limitations {
+   position: relative;
+   top: -80px;
+   text-decoration: underline;
+   font-size: 22px;
+}
+
+#limitationsDescription {
+    top: -95px;
+    position: relative;
+}
+
+#Data {
+   position: relative;
+   top: -85px;
+   text-decoration: underline;
+   font-size: 22px;
+}
+
+#dataDescription {
+    top: -95px;
+    position: relative;
+}
+
+.capital-label {
+    font-size:  10px;
+    paint-order: stroke;
+    stroke: #000000;
+    stroke-width: 2px;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    font-weight: 800;
+}
+
+#HurricaneCount{
+    position: absolute;
+    margin-top: 550px;
+    margin-left: -40px;
+    font-size: 18px;
+}
+
+.color-scale-wrapper {
+    position: absolute;
+    width: 200px; /* match #colorElement */
+    height: 40px; /* enough space to position labels above/below */ 
+    margin-left: -40px;
+}
+
+#colorElement {
+    width: 150%;
+    height: 30px;
+    /* background: linear-gradient(to right, white, darkred); */
+    border: 3px solid black;
+}
+
+#lowNumber, #highNumber {
+    position: absolute;
+    font-size: 0.9em;
+}
+
+#lowNumber {
+    left: 0;
+    top: 25px; /* just below the color bar */
+}
+
+#highNumber {
+    right: -100px;
+    top: 25px; /* just below the color bar */
+}
+
+#colorscaleLabel {
+    position: absolute;
+    top: -20px;
+}
+
+#hurricane_button {
+    margin-top: 5px;
+}
