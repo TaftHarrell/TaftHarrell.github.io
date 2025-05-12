@@ -151,29 +151,29 @@
         gap: 400px;
     }
     #About {
-        top: -270px;
+        top: -240px;
     }
 
     #aboutDescription {
-        top: -285px;
+        top: -255px;
     }
 
     #Limitations {
-        top: -260px;
+        top: -230px;
     }
 
     #limitationsDescription {
-        top: -275px;
+        top: -245px;
     }
 
     #Data {
-        top: -265px;
+        top: -235px;
     }
 
     #dataDescription {
-        top: -275px;
+        top: -245px;
     }
     #yearRank {
-        top: 20px;
+        top: 50px;
     }
 }
