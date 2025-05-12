@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hurricanes in the United States: CSC-362 Final Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/introjs.min.css" rel="stylesheet">
+</head>
+<body >
+    <h1> Hurricane Frequency in the United States</h1>
+    <div class="main-flex-container" data-title="Hello!" data-intro="Welcome to our data vis!" >
+        <div id="map" alt="A map of the Southeastern United States with varying shades of white and red. Regions colored a darker shade of red, such as Florida, Louisiana, and the coast of many Southern states, have seen many hurricanes. States farther to the North and West are white or a light shade of red, and have seen few hurricanes. However, as time has gone on, these states start to become a darker shade of red, as climate change causes hurricanes to move more inland."></div>
+        <p id="HurricaneCount" data-title="Hurricane Count" data-intro="Displays the number of hurricanes that affected the United States
+        during the time range." data-step="10"></p>
+        <div class="color-scale-wrapper">
+        <div id="colorElement" data-title="Color Scale" data-intro="Color scale which shows the range of hurricane hits in a certain destination."
+            alt="A color scale ranging from white to a dark red. A color of pure white denotes 0 hurricanes, while the dark red represents the max frequency the United States has seen. This upper bound varies by time period and can be found under the highNumber ID."></div>
+        <label for="colorElement" id="colorscaleLabel">Hurricane Hits Per Location</label>
+        <p id="lowNumber">0</p>
+        <p id="highNumber"></p>
+        </div>
+        <div class="time-range-selector">
+            <div class="time-control" data-title="Time Controls" data-intro="The default years are 1851-2024.">
+            <label for="time-range-selector">Update Years Below: <br><br></label>
+            <label for="startYear">Start:</label>
+            <input type="number" id="startYear" min="1851" max="2024" placeholder="type here"
+                data-title="Start Year" data-intro="Put in a starting year! Starting year must be greater than 1851, less than 2014,
+                and less than end year by at least 10 years.">
+            
+            <label for="endYear">End:</label>
+            <input type="number" id="endYear" min="1851" max="2024" placeholder="type here"
+                data-title="End Year" data-intro="Put in a end year. End year must be greater than 1861
+                    and less than 2024. The end year must be greater than start year by at least 10 years.">
+            
+            <button id="updateTimeRange" data-title="Update Year Range" data-intro="Click this button to update the time range inputs.">Update</button>
+            <div style="margin-top: 20px;">
+                <button id="playPauseBtn" data-title="Play Hurricane Animation" 
+                    data-intro="Push this button to start the hurricane animation over the time ranges!">Play</button>
+                <button id="backwardBtn" data-title="Backword Button" 
+                    data-intro="Want to see a previous time range? Hit this button!">&lt;</button>
+                <span id="groupLabel">1851 - 2024</span>
+                <button id="forwardBtn" data-title="Forward Button" 
+                    data-intro="Want to see the next time range? Hit this button!">&gt;</button>
+              </div>
+            </div>
+            
+
+            <div class="hurricaneControls">
+                <input type="search" list="hurricane keyword" id="hurricaneSelector" name="searching" placeholder="Type in hurricane..."
+                    data-title="Hurricane Lookup" 
+                    data-intro="Looking for a certain hurricane? Look it up here!">
+                <label for="hurricaneSelector">Select Hurricane</label>
+                <datalist id="hurricane keyword">
+                </datalist>
+                <button id="hurricane_button" 
+                    data-title="Hurricane Confirmation" 
+                    data-intro="Push this button to confirm hurricane choice. You won't be able to see the hurricane 
+                    displayed on the map until you hit this button.">Confirm Selection</button>
+                <div class="hurricaneDisplayBox" data-title="Hurricane Characteristics"
+                        data-intro="Shows the statistics of hurricane choice during animation!">
+                <label for="hurricaneDisplayBox">Hurricane Characteristics:</label>
+                <div id="hurricaneCharacteristics">
+                <span id="name" class="hurricaneCharacteristics"><br>Name:</span>
+                <span id="date" class="hurricaneCharacteristics"><br>Date:</span>
+                <span id="maxWind" class="hurricaneCharacteristics"><br>Maximum Sustained Wind:</span>
+                <span id="classification" class="hurricaneCharacteristics"><br>Classification:</span>
+                </div>
+                 <div>
+                <button id="Previous" data-title="Reverse Hurricane Path" 
+                    data-intro="Push this button to go back in hurricane path animation.">Previous</button>
+                <button id="playPause" data-title="Play Hurricane Path Animation" 
+                    data-intro= "Push this button to watch hurricane path animation." >Play</button>
+                <button id="Next" data-title="Forward Hurricane Path"
+                    data-intro="Push this button to move forward in the hurricane path animation.">Next</button>
+              </div>
+
+            </div>
+              
+                
+           
+            </div>
+        </div>
+    </div>
+    <div>
+        <details>
+        <summary id="About">About this Visualization</summary>
+        <p  id="aboutDescription">This vis was designed by two students at Davidson College, Frank Howden and Taft Harrell.
+            Our intention with this visualization was to show that hurricanes have been moving more inland over time. This vis only displays
+            data for the general area around the United States, so you many notice that some of the hurricanes (represented by a blue
+            dot) will not immediately be displayed on the map when using the hurricane selector tool.</p>
+        </details>
+        <details>
+        <summary id="Data">The Data</summary>
+        <p  id="dataDescription"> We used data from the HURDAT2 1851 - 2024 dataset, compiled by the National Hurricane Center and NOAA, which can be found 
+           <a href=https://www.nhc.noaa.gov/data/#hurdat>here</a>. We specifically used data attributes such as longitude, latitude, maximum 
+        sustained wind of the storm, status of system, and more. You can see our formatted data below: </p>
+        <table id="dataTable"></table>
+        </details>
+        <details>
+            <summary id="Limitations">Limitations</summary>
+            <p id="limitationsDescription">We had to estimate hurricane raddi, as the 
+            HURDAT2 1851 - 2024 dataset only contained hurricane raddi for roughly the last 20 years. Hurricane raddi
+            were estimated under the following criteria: Tropical Depression = 10; Tropical Storm = 50; Category 1
+            Hurricane = 100; Category 2 Hurricane = 150; Category 3 Hurricane = 200; Category 4 Hurricane = 250; 
+            Category 5 Hurricane = 300. Although typically the more intense the hurricane it is, the smaller its radius,
+            the data was best displayed visually under this convention. Furthermore, this convention ensures a consistent
+            method.
+        </p>
+        </details>
+
+    </div>
+            <script src="https://cdn.jsdelivr.net/npm/intro.js@7.2.0/intro.min.js"></script>
+            <script src="js/d3.v6.min.js"></script>
+            <script src="js/topojson.v3.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+            <script src="js/map.js"></script>
+            <script src="js/main.js"></script>
+            <script>   
+            introJs().start();
+            </script>
+        </body>
+        </html>
