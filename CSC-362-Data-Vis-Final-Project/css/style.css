@@ -130,7 +130,13 @@
     position: absolute;
     top: -20px;
 }
-
+    
 #hurricane_button {
     margin-top: 5px;
+}
+
+@media (min-width) {
+    #HurricaneCount {
+        font-size: 50px;
+    }
 }
