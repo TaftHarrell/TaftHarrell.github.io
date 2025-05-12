@@ -143,26 +143,26 @@
         gap: 400px;
     }
     #About {
-        top: -190px;
+        top: -290px;
     }
 
     #aboutDescription {
-        top: -205px;
+        top: -305px;
     }
 
     #Limitations {
-        top: -180px;
+        top: -280px;
     }
 
     #limitationsDescription {
-        top: -195px;
+        top: -295px;
     }
 
     #Data {
-        top: -185px;
+        top: -285px;
     }
 
     #dataDescription {
-        top: -195px;
+        top: -295px;
     }
 }
