@@ -136,7 +136,7 @@
 }
 
 @media (max-width: 767px) {
-    #HurricaneCount {
-        font-size: 50px;
+    #colorscaleLabel {
+        top: -200px;
     }
 }
