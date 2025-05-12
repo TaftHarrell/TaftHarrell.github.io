@@ -137,6 +137,32 @@
 
 @media (max-width: 767px) {
     #colorscaleLabel {
-        top: -200px;
+        top: -40px;
+    }
+    .main-flex-container {
+        gap: 400px;
+    }
+    #About {
+        top: -190px;
+    }
+
+    #aboutDescription {
+        top: -205px;
+    }
+
+    #Limitations {
+        top: -180px;
+    }
+
+    #limitationsDescription {
+        top: -195px;
+    }
+
+    #Data {
+        top: -185px;
+    }
+
+    #dataDescription {
+        top: -195px;
     }
 }
